@@ -1,37 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_item_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     android:gravity="center_vertical"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:padding="16dp">
 
     <TextView
         android:id="@+id/list_item_mag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="start"
         android:layout_marginLeft="8dp"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
+        android:background="@drawable/magnitude_circle"
+        android:gravity="center"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
         tools:text="7.6" />
 
-    <TextView
-        android:id="@+id/list_item_place"
+    <!-- Location -->
+    <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
         android:layout_weight="1"
-        android:gravity="center_horizontal"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
-        tools:text="San Francisco" />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/list_item_date"
+        <TextView
+            android:id="@+id/list_item_place1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+            android:textColor="@color/textColorEarthquakeDetails"
+            tools:text="5km N of" />
+
+        <TextView
+            android:id="@+id/list_item_place2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
+            android:textColor="@color/textColorEarthquakeLocation"
+            tools:text="San Francisco" />
+
+    </LinearLayout>
+
+
+    <!-- Dat & Time -->
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="end"
         android:layout_marginRight="8dp"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
-        tools:text="July 2, 2017" />
+        android:gravity="end"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/list_item_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="July 2, 2017" />
+
+        <TextView
+            android:id="@+id/list_item_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+            tools:text="08:04am" />
+
+    </LinearLayout>
 
 </LinearLayout>
